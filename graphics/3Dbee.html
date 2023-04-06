@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D Bee</title>
+  </head>
+  <body>
+    [Left window] View by a remote external observer; [Right window] View from location of the camera</br>
+    <canvas id="observerCanvas" width="500" height="400" style="border:1px solid #888;"></canvas>
+    <canvas id="cameraCanvas" width="500" height="400" style="border:1px solid #888;"></canvas>
+    </br>
+    <input id="slider" type="range" min="0" max="100" /> Move camera around scene
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script src="3Dbee.js" id="module"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open the Prism</title>
+  </head>
+
+  <body>
+    <script id="vertexShader" type="not-js">
+      attribute vec3 vPosition;
+      attribute vec3 vNormal;
+      attribute vec3 vColor;
+      varying vec3 fPosition;
+      varying vec3 fColor;
+      varying vec3 fNormal;
+      uniform mat4 uMV;
+      uniform mat4 uMVP;
+
+      void main(void) {
+        gl_Position = uMVP * vec4(vPosition, 1.0);
+        fPosition = (uMV * vec4(vPosition, 1.0)).xyz; // In camera coordinates
+        fColor = vColor;
+        fNormal = vNormal;                            // In local coordinates
+     }
+    </script>
+
+    <script id="fragmentShader" type="not-js">
+      precision highp float;
+      varying vec3 fPosition;
+      varying vec3 fColor;
+      varying vec3 fNormal;
+      uniform mat4 uMV;
+      uniform mat3 uMVn;
+
+      const vec3  lightV    = vec3(0.0,-0.3,1.0);
+	  const vec3 lightV2 = vec3(0.0, 0.9, 0.0);
+      const float lightI    = 1.0;               // only for diffuse component
+      const float ambientC  = 0.3;
+      const float diffuseC  = 0.6;
+      const float specularC = 0.6;
+      const float specularE = 16.0;
+      const vec3  lightCol  = vec3(1.0,1.0,1.0);
+      const vec3  objectCol = vec3(0.7,0.2,0.2); // red orange
+      vec2 blinnPhongDir(vec3 lightDir, vec3 n, float lightInt, float Ka,
+        float Kd, float Ks, float shininess) {
+        vec3 s = normalize(lightDir);
+        vec3 v = normalize(-fPosition);
+        vec3 h = normalize(v+s);
+        float diffuse = Ka + Kd * lightInt * max(0.0, dot(n, s));
+        float spec =  Ks * pow(max(0.0, dot(n,h)), shininess);
+        return vec2(diffuse, spec);
+      }
+
+      void main(void) {
+        vec3 n = normalize(uMVn * fNormal);
+        vec3 ColorS  = blinnPhongDir(lightV,n,0.0   ,0.0,     0.0,     specularC,specularE).y*lightCol;
+        vec3 ColorAD = blinnPhongDir(lightV,n,lightI,ambientC,diffuseC,0.0,      1.0      ).x*fColor;
+		vec3 ColorS2  = blinnPhongDir(lightV2,n,0.0   ,0.0,     0.0,     specularC,specularE).y*lightCol;
+        gl_FragColor = vec4(ColorAD+ColorS+ColorS2,1.0);
+      }
+    </script>
+
+    <canvas id="mycanvas" width="500" height="500"></canvas>
+    <br>
+    <input id="slider1" type="range" min="-100" max="100" />
+    <input id="slider2" type="range" min="-100" max="100" />
+	<input id="slider3" type="range" min="0" max="100" />
+    <script type="text/javascript" src="gl-matrix-min.js"></script>
+    <script src="present.js" id="module"></script>
+  </body>
+</html>
