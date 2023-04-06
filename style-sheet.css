@@ -1,0 +1,86 @@
+.topnav {
+  background-color: #4f5257;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #323336;
+  background-color: #b2bdd1;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #97a2b8;
+  color: #323336;
+}
+
+.topnav a.active {
+  background-color: #93a4c4;
+  color: #ebebeb;
+}
+
+.header {
+        display: flex;
+		align-items: center;
+		justify-content: center;
+      }
+      img {
+        max-width: 100%;
+      }
+      .headerImage {
+        flex-basis: auto;
+		padding-left: 16vw;
+		padding-right: 2vw;
+      }
+      .headerText {
+		font-family: 'Courier New', monospace;
+		color: #323336;
+        font-size: 3vw;
+        padding-right: 20vw;
+      }
+	  
+
+.buttonsDisplay{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttons{
+	padding-left: 8vw;
+	padding-right: 15vw;
+}
+
+.personImage{
+	padding-left: 25vw;
+	padding-right: 8vw;
+}
+	  
+
+body {
+	background-color:#dfe4ed;
+	font-family: 'Georgia', serif; 
+	padding-top: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 25pm;}
+	
+	p{
+	text-align: center; 
+	font-size: 2vw;
+	color: #323336;}
+	
+	button{
+		background-color: #f7f8fa;
+		font-family: 'Courier New', monospace;
+		color: #323336;
+		font-size: 3vw;
+	}
+	button:hover{
+		background-color: #ebeef2;
+	}
+		
