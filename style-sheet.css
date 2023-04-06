@@ -70,13 +70,19 @@
 }
 
 .buttons{
+	z-index: 1;
 	padding-left: 8vw;
 	padding-right: 15vw;
 }
 
 .personImage{
+	z-index: 1;
 	padding-left: 25vw;
 	padding-right: 8vw;
+}
+
+.fishTop{
+	z-index: 10;
 }
 
 .headerText2 {
