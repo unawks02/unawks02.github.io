@@ -45,7 +45,7 @@
 .img {
   margin-top: 8px;
   vertical-align: middle;
-  max-width: 400 px;
+  max-width: device-width/3;
 }
 
 body {
