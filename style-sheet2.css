@@ -38,7 +38,7 @@
 
 /* Create three equal columns*/
 .column {
-  max-width: device-width/3;
+  flex: device-width/3;
   padding: 4px;
 }
 
