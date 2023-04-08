@@ -38,29 +38,29 @@
       }
       .headerImage {
         flex-basis: auto;
-		padding-left: 16vw;
+		padding-left: 18vw;
 		padding-right: 2vw;
       }
       .headerText {
 		font-family: 'Courier New', monospace;
 		color: #323336;
         font-size: 3vw;
-        padding-right: 20vw;
+        padding-right: 22vw;
       }
 	  
 	  .gameText {
 		font-family: 'Georgia', serif;
-		tex-align: left;
 		color: #323336;
         font-size: 3vw;
-        padding-right: 4vw;
-		max-width: 50%;
+        padding-right: 2vw;
+		max-width: 40%;
       }
 	  .gameImage {
         flex-basis: auto;
-		padding-left: 4vw;
+		padding-left: 2vw;
 		padding-right: 2vw;
-		min-width: 400px;
+		max-width: 50%;
+		min-width: 40%;
       }
 
 .buttonsDisplay{
@@ -76,9 +76,12 @@
 }
 
 .personImage{
+	flex: 40%;
+	max-width: 100%;
+	min-width: 30%;
 	z-index: 1;
 	padding-left: 25vw;
-	padding-right: 8vw;
+	padding-right: 4vw;
 }
 
 .fishTop{
