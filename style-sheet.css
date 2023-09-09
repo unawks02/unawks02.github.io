@@ -32,6 +32,7 @@
         display: flex;
 		align-items: center;
 		justify-content: center;
+
       }
       img {
         max-width: 100%;
@@ -40,14 +41,15 @@
         flex-basis: auto;
 		padding-left: 22vw;
 		padding-right: 2vw;
+
       }
       .headerText {
 		font-family: 'Courier New', monospace;
 		color: #323336;
         font-size: 3vw;
         padding-right: 20vw;
+
       }
-	  
 	  .gameText {
 		font-family: 'Georgia', serif;
 		color: #323336;
@@ -82,10 +84,6 @@
 	z-index: 1;
 	padding-left: 12vw;
 	padding-right: 12vw;
-}
-
-.fishTop{
-	z-index: 10;
 }
 
 .headerText2 {
