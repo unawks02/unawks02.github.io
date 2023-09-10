@@ -105,10 +105,10 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		max-height: 5vh;
+		max-height: 8vw;
 		position: relative;
 		z-index: 5;
-		background-color: #edebeb;
+		background-color: #f7f8fa;
 		overflow: hidden;
 		border: 1px solid black;
       }
