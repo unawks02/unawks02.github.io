@@ -1,154 +1,152 @@
 <!DOCTYPE html>
-<head>
-<html lang="en">
-<meta charset="UTF-8">
-<title>Unawks Music</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="./style-music.css">
-<script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
-</head>
-<!--the music player on this page was made using a youtube tutorial by GreatStack--> 
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Unawks Music</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="./style-music.css">
+    </head>
+<!--the music player on this page was made with help from a youtube tutorial by GreatStack-->
 
-	<body>
+<body>
 
-	<div class="topnav">
-				<a href="./index.html">HOME</a>
-				<a href="./games.html">GAMES</a>
-				<a href="./graphics.html">GRAPHICS</a>
-				<a href="./art.html">ART</a>
-				<a class="active" href="./music.html">MUSIC</a>
-			</div>
-	<br>
-			
-	<div class = "headerText2">
-			  <h1> <u> MY MUSIC  </u> </h1>
-			</div>
+    <div class="topnav">
+        <a href="./index.html">HOME</a>
+        <a href="./games.html">GAMES</a>
+        <a href="./graphics.html">GRAPHICS</a>
+        <a href="./art.html">ART</a>
+        <a class="active" href="./music.html">MUSIC</a>
+    </div>
+    <br>
 
-	<p> Use the player below to hear my music! </p>
-	<br> <br>
+    <div class="headerText2">
+        <h1> <u> MY MUSIC  </u> </h1>
+    </div>
 
-  <div class = "spacer">
-       <div class = "music">
-			<img src="./images/frogSong.png" class="song-img" id="thisImg">
-			<h1 id="title"> RainWater Music </h1>
+    <p> Use the player below to hear my music! </p>
+    <br> <br>
 
-			<audio controls id="song">
-			     <source src = "./music/RainWaterSong.mp3" type="audio/mpeg" id="aSrc">
-			</audio>
+    <div class="spacer">
+        <div class="music">
+            <img src="./images/frogSong.png" class="song-img" id="thisImg">
+            <h1 id="title"> RainWater Music </h1>
 
-			<div class= "sControls">
-			     <div onclick="goBack()"><i class = "fa-solid fa-backward" id="back"></i></div>
-				 <div onclick="play()"><i class = "fa-solid fa-play" id="pIcon"></i></div>
-				 <div onclick="goNext()"><i class = "fa-solid fa-forward" id="next"></i></div>
-			</div>
+            <audio controls id="song">
+                <source src="./music/RainWaterSong.mp3" type="audio/mpeg" id="aSrc">
+            </audio>
 
-	   </div>
-  </div>
+            <div class="sControls">
+                <div onclick="goBack()" id="back"><p>prev</p></div>
+                <div onclick="play()" id="pIcon"><p id="pIconText">play</p></div>
+                <div onclick="goNext()" id="next"><p>next</p></div>
+            </div>
 
-  <script>
-       let song = document.getElementById("song");
-	   let back = document.getElementById("back");
-	   let next = document.getElementById("next");
-	   let aSrc = document.getElementById("aSrc");
-	   let pIcon = document.getElementById("pIcon");
-	   let title = document.getElementById("title");
-	   let photo = document.getElementById("thisImg");
-	   
-	   function play(){
-			  if(pIcon.classList.contains("fa-pause")){
-					song.pause();
-					pIcon.classList.remove("fa-pause");
-					pIcon.classList.add("fa-play");
-			  }
-			  else{
-					song.play();
-					pIcon.classList.add("fa-pause");
-					pIcon.classList.remove("fa-play");
-			  }
-	   }
+        </div>
+    </div>
 
-	   function goBack(){
-	        let main = location.href;
-			main = main.replace('/music.html', '');
-	        let source = aSrc.src.toString();
-			if(source.includes("Lorenz")){
-			    song.pause();
-				aSrc.src = main+"/music/veiltoneSong.mp3";
-				song.load();
-				photo.src = main+ "/images/girlSong.png";
-				title.innerText = "Veiltone Main Music";
-				song.play();
-			}
-			else if(source.includes("WIP")){
-			    song.pause();
-				aSrc.src = main+"/music/LorenzSong.mp3";
-				song.load();
-				photo.src = main+ "/images/spaceSong.png";
-				title.innerText = "Lorenz Roblox Music";
-				song.play();
-			}
-			else if(source.includes("RainWater")){
-			    song.pause();
-				aSrc.src = main+"/music/WIPtitle.mp3";
-				song.load();
-				photo.src = main+ "/images/sketchSong.png";
-				title.innerText = "WIP title screen song";
-				song.play();
-			}
-			else {
-			    song.pause();
-				aSrc.src = main+"/music/RainWaterSong.mp3";
-				song.load();
-				photo.src = main+ "/images/frogSong.png";
-				title.innerText = "RainWater Music";
-				song.play();
-			}
-	   }
+    <script>
+        let song = document.getElementById("song");
+        let back = document.getElementById("back");
+        let next = document.getElementById("next");
+        let aSrc = document.getElementById("aSrc");
+        let pIcon = document.getElementById("pIcon");
+        let pIconText = document.getElementById("pIconText");
+        let title = document.getElementById("title");
+        let photo = document.getElementById("thisImg");
 
-	   function goNext(){
-	        let main = location.href;
-			main = main.replace('/music.html', '');
-	        let source = aSrc.src.toString();
-			if(source.includes("RainWater")){
-			    song.pause();
-				aSrc.src = main+"/music/veiltoneSong.mp3";
-				song.load();
-				photo.src = main+ "/images/girlSong.png";
-				title.innerText = "Veiltone Main Music";
-				song.play();
-			}
-			else if(source.includes("veiltone")){
-			    song.pause();
-				aSrc.src = main+"/music/LorenzSong.mp3";
-				song.load();
-				photo.src = main+ "/images/spaceSong.png";
-				title.innerText = "Lorenz Roblox Music";
-				song.play();
-			}
-			else if(source.includes("Lorenz")){
-			    song.pause();
-				aSrc.src = main+"/music/WIPtitle.mp3";
-				song.load();
-				photo.src = main+ "/images/sketchSong.png";
-				title.innerText = "WIP title screen song";
-				song.play();
-			}
-			else {
-			    song.pause();
-				aSrc.src = main+"./music/RainWaterSong.mp3";
-				song.load();
-				photo.src = main+ "/images/frogSong.png";
-				title.innerText = "RainWater Music";
-				song.play();
-			}
-	   }
+        function play() {
+            if (pIconText.innerText == "pause") {
+                song.pause();
+                pIconText.innerText = "play";
+            }
+            else {
+                song.play();
+                pIconText.innerText = "pause";
+            }
+        }
 
-  </script>
+        function goBack() {
+            let main = location.href;
+            main = main.replace('/music.html', '');
+            let source = aSrc.src.toString();
+            if (source.includes("Lorenz")) {
+                song.pause();
+                aSrc.src = main + "/music/veiltoneSong.mp3";
+                song.load();
+                photo.src = main + "/images/girlSong.png";
+                title.innerText = "Veiltone Main Music";
+                pIconText.innerText = "play";
+            }
+            else if (source.includes("WIP")) {
+                song.pause();
+                aSrc.src = main + "/music/LorenzSong.mp3";
+                song.load();
+                photo.src = main + "/images/spaceSong.png";
+                title.innerText = "Lorenz Roblox Music";
+                pIconText.innerText = "play";
+            }
+            else if (source.includes("RainWater")) {
+                song.pause();
+                aSrc.src = main + "/music/WIPtitle.mp3";
+                song.load();
+                photo.src = main + "/images/sketchSong.png";
+                title.innerText = "WIP title screen song";
+                pIconText.innerText = "play";
+            }
+            else {
+                song.pause();
+                aSrc.src = main + "/music/RainWaterSong.mp3";
+                song.load();
+                photo.src = main + "/images/frogSong.png";
+                title.innerText = "RainWater Music";
+                pIconText.innerText = "play";
+            }
+        }
 
-  <br>
-  <br>
-  <br>
-		
-	</body>
+        function goNext() {
+            let main = location.href;
+            main = main.replace('/music.html', '');
+            let source = aSrc.src.toString();
+            if (source.includes("RainWater")) {
+                song.pause();
+                aSrc.src = main + "/music/veiltoneSong.mp3";
+                song.load();
+                photo.src = main + "/images/girlSong.png";
+                title.innerText = "Veiltone Main Music";
+                pIconText.innerText = "play";
+            }
+            else if (source.includes("veiltone")) {
+                song.pause();
+                aSrc.src = main + "/music/LorenzSong.mp3";
+                song.load();
+                photo.src = main + "/images/spaceSong.png";
+                title.innerText = "Lorenz Roblox Music";
+                pIconText.innerText = "play";
+            }
+            else if (source.includes("Lorenz")) {
+                song.pause();
+                aSrc.src = main + "/music/WIPtitle.mp3";
+                song.load();
+                photo.src = main + "/images/sketchSong.png";
+                title.innerText = "WIP title screen song";
+                pIconText.innerText = "play";
+            }
+            else {
+                song.pause();
+                aSrc.src = main + "./music/RainWaterSong.mp3";
+                song.load();
+                photo.src = main + "/images/frogSong.png";
+                title.innerText = "RainWater Music";
+                pIconText.innerText = "play";
+            }
+        }
+
+    </script>
+
+    <br>
+    <br>
+    <br>
+
+</body>
 
 </html>
