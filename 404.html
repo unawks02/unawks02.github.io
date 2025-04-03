@@ -27,8 +27,9 @@
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/')
+        l.pathname
+      ? `?currentRoute=${window.location.pathname.slice(1)}`
+      : ""
       );
 
     </script>
