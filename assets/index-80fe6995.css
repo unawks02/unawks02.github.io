@@ -21,7 +21,7 @@ nav {
     width: 85vw;
     overflow: hidden;
     justify-content: center;
-    display: flex
+    display: flex;
 }
 
 nav a {
@@ -31,18 +31,18 @@ nav a {
     background-color: #f2e3fa;
     text-align: center;
     padding: .5vh .1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border: .1em solid white;
     font-family: Courier New, monospace;
     margin-bottom: 3vh;
-    color: #706875;
+    color: #4E4950;
     font-weight: 700;
     text-decoration: none
 }
 
-nav a:hover {
-    background-color: #b49bc2;
-    color: #3e3642
+nav a:hover, nav a:focus {
+    background-color: #211C22;
+    color: #3e3642;
 }
 
 nav a.active {
@@ -88,7 +88,7 @@ button {
     width: 24vw
 }
 
-button:hover {
+button:hover, button:focus {
     background-color: #ebeef2
 }
 
@@ -320,7 +320,7 @@ a {
     text-decoration: none
 }
 
-.butText:hover {
+.butText:hover, .butText:focus {
     background-color: #e3d5eb
 }
 
