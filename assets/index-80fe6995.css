@@ -41,12 +41,13 @@ nav a {
 }
 
 nav a:hover, nav a:focus {
-    background-color: #211C22;
-    color: #3e3642;
+    background-color: #B49BC2;
+    color: #211C22;
+    border: .08em solid #4E4950;
 }
 
 nav a.active {
-    color: #3e3642;
+    color: #211C22;
     font-weight: 800;
     text-decoration: none;
     background-color: #dfcaeb;
